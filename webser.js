@@ -14,7 +14,7 @@ wsServer.on('connection', (ws, req)=>{
     connectedClients.push(ws);
 
     ws.on('message', data => {
-        console.log(data);
+        
         connectedClients.forEach((ws,i)=>{
             if(ws.readyState === ws.OPEN){
                 ws.send(data);
